@@ -22,9 +22,9 @@ angular.module('uiRouterSample', [
 )
 
 .config(
-  [          '$stateProvider', '$urlRouterProvider',
-    function ($stateProvider,   $urlRouterProvider) {
-
+  [          '$stateProvider', '$urlRouterProvider','blockProvider',
+    function ($stateProvider,   $urlRouterProvider, blockProvider) {
+    console.log( blockProvider )
       /////////////////////////////
       // Redirects and Otherwise //
       /////////////////////////////
@@ -90,6 +90,24 @@ angular.module('uiRouterSample', [
                        '</ul>';
               }, 100);
             }]
+        })
+
+        ///////////
+        // Block //
+        ///////////
+
+        .state('block', {
+          url: '/block',
+
+          // Showing off how you could return a promise from templateProvider
+          templateProvider: blockProvider.blockTemplate('/sample/app/blocks/partial.html')
+        })
+
+        .state('block2', {
+          url: '/block2',
+
+          // Showing off how you could return a promise from templateProvider
+          templateProvider: blockProvider.blockTemplate('/sample/app/blocks/partial2.html')
         })
     }
   ]

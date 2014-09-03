@@ -9,11 +9,13 @@ routerFiles = {
     'src/view.js',
     'src/viewScroll.js',
     'src/viewDirective.js',
+    'src/extraViewDirective.js',
     'src/stateDirectives.js',
     'src/stateFilters.js'
   ],
   testUtils: [
-    'test/testUtils.js'
+    'test/testUtils.js',
+    'sample/vendor/jquery-1.11.1.min.js'
   ],
   test: [
     'test/*Spec.js',
